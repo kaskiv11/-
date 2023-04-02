@@ -1,0 +1,11 @@
+---
+- hosts: all
+  user: vkaskiv
+  become: true
+  become_method: sudo
+  tasks:
+    - name: Change prefix of prod hostname
+      lineinfile:
+        path: /etc/hostname
+        regexp: '^vkaskiv-virtual-machine'
+        line: volodymyr-kaskiv-lab2
